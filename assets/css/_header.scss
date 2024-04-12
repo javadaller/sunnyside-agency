@@ -1,0 +1,73 @@
+@use "extends";
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include box(100%,100vh);
+    color:$white;
+    background-image: url("../images/photos/image-header.jpg");
+    background-color: $cyanFooter;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    nav {
+        @include box(100%,10%);
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:3%;
+        font-family: 'Barlow';
+
+        img {
+            @include box(12%,auto);
+        }
+
+        #menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:40%;
+            font-size: 2.2vw;
+            margin-right:2%;
+        }
+
+        #menu > div {
+            border-radius: 25px;
+            padding:10px;
+            cursor: pointer;
+        }
+
+        #menu > div:hover {
+            color:$darkBlue;
+            background-color: $white;
+            font-family: 'Fraunces';
+        }
+    }
+
+    h1 {
+        margin-top: 5%;
+        font-family: 'Fraunces';
+        font-size: 4vw;
+        letter-spacing: 10px;
+        text-align: center;
+    }
+
+    svg {
+        margin-top: 5%;
+    }
+}
+
+// RESPONSIVE ////////////////////
+@media screen and (max-width:600px) {
+    #menu {
+        font-size: 2.5vw;
+        margin-right:5%;
+    }
+
+    svg {
+        margin-top:20%;
+    }
+}
+

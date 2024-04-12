@@ -1,0 +1,46 @@
+@use "extends";
+
+footer {
+    @extend .flexCenterColumn;
+    justify-content: space-around;
+    @include box(100%,40vh);
+    color:$cyanFooter;
+    background-color: $footer;
+
+    img {
+        @include box(12%,auto);
+        filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(70%) contrast(99%);
+    }
+
+    nav {
+        font-family: 'Barlow';
+        @include box(25%,5%);
+        font-size: 1.3vw;
+    }
+
+    nav > div, #socials > img {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    nav > div:hover {
+        transform:scale(110%);
+    }
+
+    nav, #socials {
+        @extend .flexCenterAround;
+    }
+
+    #socials {
+        @include box(25%,5%);
+    }
+
+    #socials > img {
+        @include box(12%,auto);
+        filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(70%) contrast(99%);
+    }
+
+    #socials > .svgFilter {
+        filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(110%) contrast(99%);
+    }
+}

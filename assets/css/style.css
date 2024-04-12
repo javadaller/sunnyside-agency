@@ -1,0 +1,382 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/Barlow-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/static/Fraunces_144pt-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FrauncesBold";
+  src: url("../fonts/static/Fraunces_144pt-Black.ttf") format("truetype");
+}
+.upDown {
+  animation: upDown 1s linear alternate-reverse infinite;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
+.flexCenter, main #images, main #testimonials div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCenterAround, footer nav, footer #socials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexCenterColumn, footer, main #testimonials div article, main #testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: hsl(0, 0%, 100%);
+  background-image: url("../images/photos/image-header.jpg");
+  background-color: hsl(168, 34%, 41%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header nav {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3%;
+  font-family: "Barlow";
+}
+header nav img {
+  width: 12%;
+  height: auto;
+}
+header nav #menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  font-size: 2.2vw;
+  margin-right: 2%;
+}
+header nav #menu > div {
+  border-radius: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+header nav #menu > div:hover {
+  color: hsl(212, 27%, 19%);
+  background-color: hsl(0, 0%, 100%);
+  font-family: "Fraunces";
+}
+header h1 {
+  margin-top: 5%;
+  font-family: "Fraunces";
+  font-size: 4vw;
+  letter-spacing: 10px;
+  text-align: center;
+}
+header svg {
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  #menu {
+    font-size: 2.5vw;
+    margin-right: 5%;
+  }
+  svg {
+    margin-top: 20%;
+  }
+}
+.flexCenter, main #testimonials div, main #images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCenterAround, footer nav, footer #socials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexCenterColumn, footer, main #testimonials, main #testimonials div article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+main section {
+  padding: 10%;
+}
+main section p {
+  margin-top: 5%;
+  font-family: "Barlow";
+  color: hsl(213, 9%, 39%);
+}
+main section h2 {
+  font-family: "Fraunces";
+  font-size: 3vw;
+}
+main section, main figure {
+  width: 50%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main figure .sectionImage {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main #graphic, main #photography {
+  text-align: center;
+  padding-top: 25%;
+}
+main #graphic h2, main #photography h2 {
+  font-size: 2.3vw;
+}
+main #graphic p, main #photography p {
+  margin-top: 10%;
+}
+main #graphic {
+  background-image: url("../images/photos/image-graphic-design.jpg");
+  background-color: hsl(168, 34%, 41%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: hsl(167, 40%, 24%);
+}
+main #graphic p {
+  color: hsl(167, 40%, 24%);
+}
+main #photography {
+  background-image: url("../images/photos/image-photography.jpg");
+  background-color: hsl(168, 34%, 41%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: hsl(198, 62%, 26%);
+}
+main #photography p {
+  color: hsl(198, 62%, 26%);
+}
+main #testimonials {
+  width: 100%;
+  height: 100vh;
+}
+main #testimonials h1 {
+  font-size: 1.4vw;
+  font-family: "FrauncesBold";
+  letter-spacing: 10px;
+  color: hsl(210, 4%, 67%);
+  margin-bottom: 5%;
+}
+main #testimonials div {
+  justify-content: space-around;
+}
+main #testimonials div article {
+  justify-content: space-between;
+  width: 30%;
+  height: 30%;
+}
+main #testimonials div article img {
+  width: 30%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10%;
+}
+main #testimonials div article .role {
+  color: hsl(210, 4%, 67%);
+}
+main #testimonials div article h3 {
+  font-family: "Fraunces";
+  margin-top: 10%;
+}
+main #images {
+  width: 100%;
+  height: 60vh;
+  flex-wrap: wrap;
+}
+main #images img {
+  width: 25%;
+  height: 100%;
+}
+
+.flexCenter, main #testimonials div, main #images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCenterAround, footer nav, footer #socials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexCenterColumn, main #testimonials, main #testimonials div article, footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  justify-content: space-around;
+  width: 100%;
+  height: 40vh;
+  color: hsl(168, 34%, 41%);
+  background-color: #90D4C5;
+}
+footer img {
+  width: 12%;
+  height: auto;
+  filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(70%) contrast(99%);
+}
+footer nav {
+  font-family: "Barlow";
+  width: 25%;
+  height: 5%;
+  font-size: 1.3vw;
+}
+footer nav > div, footer #socials > img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+footer nav > div:hover {
+  transform: scale(110%);
+}
+footer #socials {
+  width: 25%;
+  height: 5%;
+}
+footer #socials > img {
+  width: 12%;
+  height: auto;
+  filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(70%) contrast(99%);
+}
+footer #socials > .svgFilter {
+  filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(110%) contrast(99%);
+}
+
+@media (max-width: 600px) {
+  figure, section {
+    width: 100% !important;
+  }
+  #testimonials {
+    height: 180vh !important;
+    padding: 3% !important;
+    justify-content: space-evenly !important;
+  }
+  #testimonials h1 {
+    font-size: 1.8vw !important;
+  }
+  #testimonials > div {
+    flex-direction: column;
+    justify-content: space-between !important;
+  }
+  #testimonials > div article {
+    width: 90% !important;
+  }
+  #testimonials > div article img {
+    width: 20% !important;
+    margin-bottom: 2% !important;
+  }
+  #testimonials > div article h3 {
+    margin-top: 2% !important;
+  }
+  #images {
+    height: 100vh !important;
+  }
+  #images img {
+    width: 50% !important;
+    height: 50% !important;
+  }
+}/*# sourceMappingURL=style.css.map */

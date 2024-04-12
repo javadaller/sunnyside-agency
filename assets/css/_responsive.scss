@@ -1,0 +1,42 @@
+//MAIN
+@media (max-width:600px) {
+    figure, section {
+        width:100% !important;
+    }
+
+    #testimonials {
+        height:180vh !important;
+        padding:3% !important;
+        justify-content: space-evenly !important;
+
+        h1 {
+            font-size: 1.8vw !important;
+        }
+    }
+
+    #testimonials > div {
+        flex-direction: column;
+        justify-content: space-between !important;
+
+        article {
+            width:90% !important;
+
+            img {
+                width:20% !important;
+                margin-bottom: 2% !important;
+            }
+
+            h3 {
+                margin-top: 2% !important;
+            }
+        }
+    }
+
+    #images {
+        height: 100vh !important;
+        img {
+            width:50% !important;
+            height:50% !important;
+        }
+    }
+}
