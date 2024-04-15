@@ -3,19 +3,28 @@
 footer {
     @extend .flexCenterColumn;
     justify-content: space-around;
-    @include box(100%,40vh);
+    @include box(100%,55vh);
     color:$cyanFooter;
     background-color: $footer;
 
     img {
-        @include box(12%,auto);
+        @include box(40%,auto);
         filter: invert(38%) sepia(15%) saturate(1389%) hue-rotate(116deg) brightness(70%) contrast(99%);
+        @include responsive(900px) {
+            @include box(15%,auto);
+            margin-top: 2%;
+        }
     }
 
     nav {
         font-family: 'Barlow';
-        @include box(25%,5%);
-        font-size: 1.3vw;
+        @include box(80%,5%);
+        font-size: 5vw;
+        @include responsive(900px) {
+            font-size: 1.2vw;
+            margin-top: 0%;
+            width:25%;
+        }
     }
 
     nav > div, #socials > img {
@@ -32,7 +41,12 @@ footer {
     }
 
     #socials {
-        @include box(25%,5%);
+        @include box(50%,5%);
+        margin-top: 15%;
+        @include responsive(900px) {
+            margin-top: 2%;
+            width:15%;
+        }
     }
 
     #socials > img {

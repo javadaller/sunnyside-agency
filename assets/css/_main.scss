@@ -1,33 +1,130 @@
 @use "extends";
 
+main :nth-child(1) {
+    order:2;
+}
+
+main :nth-child(2) {
+    order:1;
+}
+
+main :nth-child(3) {
+    order:3;
+}
+
+main :nth-child(4) {
+    order:4;
+}
+
+main :nth-child(5) {
+    order:5;
+}
+
+main :nth-child(6) {
+    order:6;
+}
+
+main :nth-child(7) {
+    order:7;
+}
+
+main :nth-child(8) {
+    order:8;
+}
+@include responsive(900px) {
+    main :nth-child(1) {
+        order:1;
+    }
+
+    main :nth-child(2) {
+        order:2;
+    }
+}
+
 main {
-    width:100%;
+    width:100vw;
     display: flex;
     flex-wrap: wrap;
 
     section {
-        padding:10%;
-
-        p {
-            margin-top: 5%;
-            font-family: 'Barlow';
-            color:$DarkGrayBlue;
+        padding:15%;
+        //text-align: center;
+        @include box(100%,100vw);
+        @include responsive(900px) {
+            @include box(50vw,50vw);
+            padding: 10%;
         }
 
         h2 {
-            font-family: 'Fraunces';
-            font-size: 3vw;
+            order:1 !important;
+            font-family: 'FrauncesBold';
+            font-size: 8vw;
+            @include responsive(900px) {
+                font-size: 4vw;
+            }
+        }
+
+        p {
+            font-family: 'Barlow';
+            font-size: 4vw;
+            color:$DarkGrayBlue;
+            order:2 !important;
+            @include responsive(900px) {
+                font-size: 1.5vw;
+            }
+        }
+
+        p, a {
+            margin-top: 5%;
+        }
+
+        a {
+            z-index: 10;
+            font-family: 'FrauncesBold';
+            font-size: 4vw;
+            text-decoration: none;
+            text-transform: uppercase;
+            position: relative;
+            @include responsive(900px) {
+                font-size: 1.5vw;
+            }
+        }
+
+        a:link, a:visited {
+            color:black;
+        }
+
+        .underline1, .underline2 {
+            z-index: 1;
+            width:40%;
+            height:15px;
+            position: absolute;
+            bottom: -10%;
+            left:15%;
+            transform: translate(-50%,-50%);
+            background-color: $yellow;
+            opacity: 0.2;
+            filter:blur(2px);
+            border-radius: 20px;
+        }
+
+        .underline2 {
+            background-color: $softRed;
         }
     }
 
     section, figure {
-        @include box(50%,75vh);
         display:flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
 
     figure {
+        @include box(100%,75vw);
+        @include responsive(900px) {
+            @include box(50vw,50vw);
+        }
+
         .sectionImage {
             @include box(100%,100%);
             object-fit: cover;
@@ -36,14 +133,25 @@ main {
 
     #graphic, #photography {
         text-align: center;
-        padding-top: 25%;
+        padding-top: 75%;
+        @include box(100%,100vh);
+        @include responsive(900px) {
+            @include box(50vw,50vw);
+            padding-top: 30%;
+        }
 
         h2 {
-            font-size: 2.3vw;
+            @include responsive(900px) {
+                font-size: 2.5vw;
+            }
         }
 
         p {
-            margin-top: 10%;
+            margin-top: 5%;
+            @include responsive(900px) {
+                font-size: 1.2vw;
+                margin-top: 3%;
+            }
         }
     }
 
@@ -74,53 +182,99 @@ main {
     }
 
     #testimonials {
-        @include box(100%,100vh);
-        @extend .flexCenterColumn;
+        @include box(100%,225vh);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        @include responsive(720px) {
+            @include box(100%,250vh);
+        }
+        @include responsive(720px) {
+            @include box(100%,275vh);
+        }
+        @include responsive(900px) {
+            @include box(100%,100vh);
+        }
 
         h1 {
-            font-size: 1.4vw;
+            font-size: 4vw;
             font-family: 'FrauncesBold';
-            letter-spacing: 10px;
+            letter-spacing: 7px;
             color:$LightGrayBlue;
-            margin-bottom: 5%;
+            margin-bottom: 15%;
+            order:1 !important;
+            @include responsive(900px) {
+                font-size: 1.5vw;
+            }
         }
 
         div {
-            @extend .flexCenter;
+            display: flex;
+            flex-direction: column;
             justify-content: space-around;
+            align-items: center;
+            @include responsive(900px) {
+                flex-direction: row;
+                align-items: flex-end;
+            }
 
             article {
                 @extend .flexCenterColumn;
                 justify-content: space-between;
-                @include box(30%);
+                @include box(100%);
+                margin-bottom: 25%;
 
                 img {
                     width:30%;
                     border-radius: 50%;
                     object-fit: cover;
                     margin-bottom: 10%;
-                }
-
-                .role {
-                    color:$LightGrayBlue;
+                    @include responsive(900px) {
+                        width:20%;
+                    }
                 }
 
                 h3 {
-                    font-family: 'Fraunces';
+                    font-family: 'FrauncesBold';
+                    font-size: 5vw;
                     margin-top: 10%;
+                    @include responsive(900px) {
+                        font-size: 1.5vw;
+                    }
+                }
+
+                .role {
+                    order:3 !important;
+                    color:$LightGrayBlue;
+                    @include responsive(900px) {
+                        font-size: 1vw;
+                    }
                 }
             }
+        }
+
+        div :nth-child(1) {
+            order:1;
         }
     }
 
     #images {
         @extend .flexCenter;
-        @include box(100%,60vh);
+        @include box(100%,65vh);
         flex-wrap: wrap;
 
         img {
-            @include box(25%,100%);
-
+            @include box(50%,50%);
+            object-fit: cover;
+            @include responsive(900px) {
+                @include box(25%,100%);
+            }
         }
     }
+
+    #images :nth-child(1) {
+        order:1;
+    }
 }
+
