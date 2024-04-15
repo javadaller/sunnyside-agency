@@ -1,0 +1,126 @@
+@use "extends";
+
+main {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    section {
+        padding:10%;
+
+        p {
+            margin-top: 5%;
+            font-family: 'Barlow';
+            color:$DarkGrayBlue;
+        }
+
+        h2 {
+            font-family: 'Fraunces';
+            font-size: 3vw;
+        }
+    }
+
+    section, figure {
+        @include box(50%,75vh);
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    figure {
+        .sectionImage {
+            @include box(100%,100%);
+            object-fit: cover;
+        }
+    }
+
+    #graphic, #photography {
+        text-align: center;
+        padding-top: 25%;
+
+        h2 {
+            font-size: 2.3vw;
+        }
+
+        p {
+            margin-top: 10%;
+        }
+    }
+
+    #graphic {
+        background-image: url("../images/photos/image-graphic-design.jpg");
+        background-color: $cyanFooter;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color:$graphicText;
+
+        p {
+            color:$graphicText;
+        }
+    }
+
+    #photography {
+        background-image: url("../images/photos/image-photography.jpg");
+        background-color: $cyanFooter;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color:$photoText;
+        
+        p {
+            color:$photoText;
+        }
+    }
+
+    #testimonials {
+        @include box(100%,100vh);
+        @extend .flexCenterColumn;
+
+        h1 {
+            font-size: 1.4vw;
+            font-family: 'FrauncesBold';
+            letter-spacing: 10px;
+            color:$LightGrayBlue;
+            margin-bottom: 5%;
+        }
+
+        div {
+            @extend .flexCenter;
+            justify-content: space-around;
+
+            article {
+                @extend .flexCenterColumn;
+                justify-content: space-between;
+                @include box(30%);
+
+                img {
+                    width:30%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-bottom: 10%;
+                }
+
+                .role {
+                    color:$LightGrayBlue;
+                }
+
+                h3 {
+                    font-family: 'Fraunces';
+                    margin-top: 10%;
+                }
+            }
+        }
+    }
+
+    #images {
+        @extend .flexCenter;
+        @include box(100%,60vh);
+        flex-wrap: wrap;
+
+        img {
+            @include box(25%,100%);
+
+        }
+    }
+}
