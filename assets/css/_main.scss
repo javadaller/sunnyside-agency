@@ -134,6 +134,10 @@ main {
     #graphic, #photography {
         text-align: center;
         padding-top: 75%;
+        background-color: $cyanFooter;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         @include box(100%,100vh);
         @include responsive(900px) {
             @include box(50vw,50vw);
@@ -157,10 +161,6 @@ main {
 
     #graphic {
         background-image: url("../images/photos/image-graphic-design.jpg");
-        background-color: $cyanFooter;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         color:$graphicText;
 
         p {
@@ -170,10 +170,6 @@ main {
 
     #photography {
         background-image: url("../images/photos/image-photography.jpg");
-        background-color: $cyanFooter;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         color:$photoText;
         
         p {

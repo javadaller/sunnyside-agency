@@ -452,6 +452,10 @@ main figure .sectionImage {
 main #graphic, main #photography {
   text-align: center;
   padding-top: 75%;
+  background-color: hsl(168, 34%, 41%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 100vh;
 }
@@ -478,10 +482,6 @@ main #graphic p, main #photography p {
 }
 main #graphic {
   background-image: url("../images/photos/image-graphic-design.jpg");
-  background-color: hsl(168, 34%, 41%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: hsl(167, 40%, 24%);
 }
 main #graphic p {
@@ -489,10 +489,6 @@ main #graphic p {
 }
 main #photography {
   background-image: url("../images/photos/image-photography.jpg");
-  background-color: hsl(168, 34%, 41%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: hsl(198, 62%, 26%);
 }
 main #photography p {
