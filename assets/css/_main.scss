@@ -48,11 +48,12 @@ main {
 
     section {
         padding:15%;
-        //text-align: center;
+        text-align: center;
         @include box(100%,100vw);
         @include responsive(900px) {
             @include box(50vw,50vw);
             padding: 10%;
+            text-align: start;
         }
 
         h2 {
@@ -96,16 +97,18 @@ main {
 
         .underline1, .underline2 {
             z-index: 1;
-            width:40%;
-            height:15px;
+            @include box(40%,15px);
             position: absolute;
             bottom: -10%;
-            left:15%;
+            left:50%;
             transform: translate(-50%,-50%);
             background-color: $yellow;
             opacity: 0.2;
             filter:blur(2px);
             border-radius: 20px;
+            @include responsive(900px) {
+                left:15%;
+            }
         }
 
         .underline2 {
@@ -139,10 +142,17 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         @include box(100%,100vh);
+
+        @include responsive(600px) {
+            padding-top: 50%;
+        }
+        @include responsive(800px) {
+            padding-top: 40%;
+        }
         @include responsive(900px) {
             @include box(50vw,50vw);
             padding-top: 30%;
-        }
+        }    
 
         h2 {
             @include responsive(900px) {
@@ -178,16 +188,14 @@ main {
     }
 
     #testimonials {
-        @include box(100%,225vh);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        @include box(100%,300vh);
+        @extend .flexCenterColumnAround;
+
         @include responsive(720px) {
-            @include box(100%,250vh);
+            @include box(100%,350vh);
         }
-        @include responsive(720px) {
-            @include box(100%,275vh);
+        @include responsive(800px) {
+            @include box(100%,400vh);
         }
         @include responsive(900px) {
             @include box(100%,100vh);
@@ -198,10 +206,11 @@ main {
             font-family: 'FrauncesBold';
             letter-spacing: 7px;
             color:$LightGrayBlue;
-            margin-bottom: 15%;
+            margin-bottom: 25%;
             order:1 !important;
             @include responsive(900px) {
                 font-size: 1.5vw;
+                margin-bottom: 5%;
             }
         }
 
@@ -216,13 +225,8 @@ main {
             }
 
             article {
-                @extend .flexCenterColumn;
-                justify-content: space-between;
+                @extend .flexCenterColumnBetween;
                 @include box(100%);
-                margin-bottom: 25%;
-                @include responsive(900px) {
-                    align-items: space-between;
-                }
 
                 img {
                     width:30%;

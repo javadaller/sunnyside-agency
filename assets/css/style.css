@@ -94,11 +94,32 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-.flexCenterColumn, footer, main #testimonials div article {
+.flexCenterColumn, footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.flexCenterColumnAround, main #testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexCenterColumnBetween, main #testimonials div article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header {
@@ -308,11 +329,32 @@ header svg {
   align-items: center;
 }
 
-.flexCenterColumn, footer, main #testimonials div article {
+.flexCenterColumn, footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.flexCenterColumnAround, main #testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexCenterColumnBetween, main #testimonials div article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 main :nth-child(1) {
@@ -362,6 +404,7 @@ main {
 }
 main section {
   padding: 15%;
+  text-align: center;
   width: 100%;
   height: 100vw;
 }
@@ -370,6 +413,7 @@ main section {
     width: 50vw;
     height: 50vw;
     padding: 10%;
+    text-align: start;
   }
 }
 main section h2 {
@@ -418,12 +462,17 @@ main section .underline1, main section .underline2 {
   height: 15px;
   position: absolute;
   bottom: -10%;
-  left: 15%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: hsl(51, 100%, 49%);
   opacity: 0.2;
   filter: blur(2px);
   border-radius: 20px;
+}
+@media only screen and (min-width: 900px) {
+  main section .underline1, main section .underline2 {
+    left: 15%;
+  }
 }
 main section .underline2 {
   background-color: hsl(7, 99%, 70%);
@@ -458,6 +507,16 @@ main #graphic, main #photography {
   background-size: cover;
   width: 100%;
   height: 100vh;
+}
+@media only screen and (min-width: 600px) {
+  main #graphic, main #photography {
+    padding-top: 50%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  main #graphic, main #photography {
+    padding-top: 40%;
+  }
 }
 @media only screen and (min-width: 900px) {
   main #graphic, main #photography {
@@ -496,22 +555,18 @@ main #photography p {
 }
 main #testimonials {
   width: 100%;
-  height: 225vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  height: 300vh;
 }
 @media only screen and (min-width: 720px) {
   main #testimonials {
     width: 100%;
-    height: 250vh;
+    height: 350vh;
   }
 }
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 800px) {
   main #testimonials {
     width: 100%;
-    height: 275vh;
+    height: 400vh;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -525,12 +580,13 @@ main #testimonials h1 {
   font-family: "FrauncesBold";
   letter-spacing: 7px;
   color: hsl(210, 4%, 67%);
-  margin-bottom: 15%;
+  margin-bottom: 25%;
   order: 1 !important;
 }
 @media only screen and (min-width: 900px) {
   main #testimonials h1 {
     font-size: 1.5vw;
+    margin-bottom: 5%;
   }
 }
 main #testimonials div {
@@ -546,15 +602,8 @@ main #testimonials div {
   }
 }
 main #testimonials div article {
-  justify-content: space-between;
   width: 100%;
   height: 100%;
-  margin-bottom: 25%;
-}
-@media only screen and (min-width: 900px) {
-  main #testimonials div article {
-    align-items: space-between;
-  }
 }
 main #testimonials div article img {
   width: 30%;
@@ -623,11 +672,32 @@ main #images :nth-child(1) {
   align-items: center;
 }
 
-.flexCenterColumn, main #testimonials div article, footer {
+.flexCenterColumn, footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.flexCenterColumnAround, main #testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexCenterColumnBetween, main #testimonials div article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 footer {
