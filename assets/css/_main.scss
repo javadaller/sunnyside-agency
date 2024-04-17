@@ -1,50 +1,17 @@
 @use "extends";
 
-main :nth-child(1) {
-    order:2;
-}
-
-main :nth-child(2) {
-    order:1;
-}
-
-main :nth-child(3) {
-    order:3;
-}
-
-main :nth-child(4) {
-    order:4;
-}
-
-main :nth-child(5) {
-    order:5;
-}
-
-main :nth-child(6) {
-    order:6;
-}
-
-main :nth-child(7) {
-    order:7;
-}
-
-main :nth-child(8) {
-    order:8;
-}
-@include responsive(900px) {
-    main :nth-child(1) {
-        order:1;
-    }
-
-    main :nth-child(2) {
-        order:2;
-    }
-}
-
 main {
     width:100vw;
     display: flex;
     flex-wrap: wrap;
+
+    .reverse {
+            display: flex;
+            flex-direction: column-reverse;
+        @include responsive(900px) {
+            flex-direction: row;
+        }
+    }
 
     section {
         padding:15%;
@@ -57,7 +24,6 @@ main {
         }
 
         h2 {
-            order:1 !important;
             font-family: 'FrauncesBold';
             font-size: 8vw;
             @include responsive(900px) {
@@ -69,7 +35,6 @@ main {
             font-family: 'Barlow';
             font-size: 4vw;
             color:$DarkGrayBlue;
-            order:2 !important;
             @include responsive(900px) {
                 font-size: 1.5vw;
             }
@@ -188,26 +153,20 @@ main {
     }
 
     #testimonials {
-        @include box(100%,300vh);
-        @extend .flexCenterColumnAround;
-
-        @include responsive(720px) {
-            @include box(100%,350vh);
-        }
-        @include responsive(800px) {
-            @include box(100%,400vh);
-        }
+        @include box(100%,150vh);
+        padding:10%;
+        display:block;
         @include responsive(900px) {
             @include box(100%,100vh);
         }
 
         h1 {
+            @include box(100%,10vh);
             font-size: 4vw;
             font-family: 'FrauncesBold';
-            letter-spacing: 7px;
+            letter-spacing: 5px;
             color:$LightGrayBlue;
-            margin-bottom: 25%;
-            order:1 !important;
+            //margin-bottom: 25%;
             @include responsive(900px) {
                 font-size: 1.5vw;
                 margin-bottom: 5%;
@@ -215,21 +174,22 @@ main {
         }
 
         div {
+            @include box(100%,140vh);
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            
             @include responsive(900px) {
                 flex-direction: row;
-                align-content: stretch;
+                //align-content: stretch;
             }
 
             article {
-                @extend .flexCenterColumnBetween;
+                @extend .flexCenterColumn;
                 @include box(100%);
 
                 img {
-                    width:30%;
+                    width:20%;
                     border-radius: 50%;
                     object-fit: cover;
                     margin-bottom: 10%;
@@ -238,9 +198,13 @@ main {
                     }
                 }
 
+                p {
+                    font-size: 3.5vw;
+                }
+
                 h3 {
                     font-family: 'FrauncesBold';
-                    font-size: 5vw;
+                    font-size: 4vw;
                     margin-top: 10%;
                     @include responsive(900px) {
                         font-size: 1.5vw;
@@ -248,17 +212,13 @@ main {
                 }
 
                 .role {
-                    order:3 !important;
                     color:$LightGrayBlue;
+                    font-size: 3vw;
                     @include responsive(900px) {
                         font-size: 1vw;
                     }
                 }
             }
-        }
-
-        div :nth-child(1) {
-            order:1;
         }
     }
 
@@ -274,10 +234,6 @@ main {
                 @include box(25%,100%);
             }
         }
-    }
-
-    #images :nth-child(1) {
-        order:1;
     }
 }
 
